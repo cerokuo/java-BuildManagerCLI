@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_service-layer" default="compile.module.service-layer">
+  <dirname property="module.service-layer.basedir" file="${ant.file.module_service-layer}"/>
+  
+  <property name="module.jdk.home.service-layer" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.service-layer" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.service-layer" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.service-layer" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="service-layer.output.dir" value="${module.service-layer.basedir}/target/classes"/>
+  <property name="service-layer.testoutput.dir" value="${module.service-layer.basedir}/target/test-classes"/>
+  
+  <path id="service-layer.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="service-layer.module.production.classpath">
+    <path refid="${module.jdk.classpath.service-layer}"/>
+    <path refid="library.maven:_commons-validator:commons-validator:1.3.1.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-digester:commons-digester:1.6.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:2.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.0.4.classpath"/>
+    <pathelement location="${store-layer.output.dir}"/>
+    <pathelement location="${model-layer.output.dir}"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  <path id="service-layer.runtime.production.module.classpath">
+    <pathelement location="${service-layer.output.dir}"/>
+    <path refid="library.maven:_commons-validator:commons-validator:1.3.1.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-digester:commons-digester:1.6.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:2.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.0.4.classpath"/>
+    <path refid="store-layer.runtime.production.module.classpath"/>
+    <path refid="model-layer.runtime.production.module.classpath"/>
+    <path refid="library.maven:_org.mockito:mockito-core:2.7.14.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.6.9.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-agent:1.6.9.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:2.5.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-android:1.6.5.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:dalvik-dx:1.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:libcore-dex:2.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  <path id="service-layer.module.classpath">
+    <path refid="${module.jdk.classpath.service-layer}"/>
+    <pathelement location="${service-layer.output.dir}"/>
+    <path refid="library.maven:_commons-validator:commons-validator:1.3.1.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-digester:commons-digester:1.6.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:2.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.0.4.classpath"/>
+    <pathelement location="${store-layer.testoutput.dir}"/>
+    <pathelement location="${store-layer.output.dir}"/>
+    <pathelement location="${model-layer.testoutput.dir}"/>
+    <pathelement location="${model-layer.output.dir}"/>
+    <path refid="library.maven:_org.testng:testng:6.9.13.6.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.48.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant:1.9.7.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant-launcher:1.9.7.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_org.mockito:mockito-core:2.7.14.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.6.9.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-agent:1.6.9.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:2.5.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-android:1.6.5.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:dalvik-dx:1.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:libcore-dex:2.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  <path id="service-layer.runtime.module.classpath">
+    <pathelement location="${service-layer.testoutput.dir}"/>
+    <pathelement location="${service-layer.output.dir}"/>
+    <path refid="library.maven:_commons-validator:commons-validator:1.3.1.classpath"/>
+    <path refid="library.maven:_commons-beanutils:commons-beanutils:1.7.0.classpath"/>
+    <path refid="library.maven:_commons-digester:commons-digester:1.6.classpath"/>
+    <path refid="library.maven:_commons-collections:commons-collections:2.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.0.4.classpath"/>
+    <path refid="store-layer.runtime.module.classpath"/>
+    <path refid="model-layer.runtime.module.classpath"/>
+    <path refid="library.maven:_org.testng:testng:6.9.13.6.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.48.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant:1.9.7.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant-launcher:1.9.7.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_org.mockito:mockito-core:2.7.14.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.6.9.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-agent:1.6.9.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:2.5.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-android:1.6.5.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:dalvik-dx:1.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:libcore-dex:2.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.service-layer">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.service-layer">
+    <patternset refid="excluded.from.module.service-layer"/>
+  </patternset>
+  
+  <path id="service-layer.module.sourcepath">
+    <dirset dir="${module.service-layer.basedir}">
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="service-layer.module.test.sourcepath">
+    <dirset dir="${module.service-layer.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.service-layer" depends="compile.module.service-layer.production,compile.module.service-layer.tests" description="Compile module service-layer"/>
+  
+  <target name="compile.module.service-layer.production" depends="register.custom.compilers,compile.module.store-layer,compile.module.model-layer" description="Compile module service-layer; production classes">
+    <mkdir dir="${service-layer.output.dir}"/>
+    <javac2 destdir="${service-layer.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.service-layer}/javac">
+      <compilerarg line="${compiler.args.service-layer}"/>
+      <bootclasspath refid="service-layer.module.bootclasspath"/>
+      <classpath refid="service-layer.module.production.classpath"/>
+      <src refid="service-layer.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.service-layer"/>
+    </javac2>
+    
+    <copy todir="${service-layer.output.dir}">
+      <fileset dir="${module.service-layer.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.service-layer.tests" depends="register.custom.compilers,compile.module.service-layer.production" description="compile module service-layer; test classes" unless="skip.tests">
+    <mkdir dir="${service-layer.testoutput.dir}"/>
+    <javac2 destdir="${service-layer.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.service-layer}/javac">
+      <compilerarg line="${compiler.args.service-layer}"/>
+      <bootclasspath refid="service-layer.module.bootclasspath"/>
+      <classpath refid="service-layer.module.classpath"/>
+      <src refid="service-layer.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.service-layer"/>
+    </javac2>
+    
+    <copy todir="${service-layer.testoutput.dir}">
+      <fileset dir="${module.service-layer.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.service-layer" description="cleanup module">
+    <delete dir="${service-layer.output.dir}"/>
+    <delete dir="${service-layer.testoutput.dir}"/>
+  </target>
+</project>

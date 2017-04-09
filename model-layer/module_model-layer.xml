@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_model-layer" default="compile.module.model-layer">
+  <dirname property="module.model-layer.basedir" file="${ant.file.module_model-layer}"/>
+  
+  <property name="module.jdk.home.model-layer" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.model-layer" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.model-layer" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.model-layer" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="model-layer.output.dir" value="${module.model-layer.basedir}/target/classes"/>
+  <property name="model-layer.testoutput.dir" value="${module.model-layer.basedir}/target/test-classes"/>
+  
+  <path id="model-layer.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="model-layer.module.production.classpath">
+    <path refid="${module.jdk.classpath.model-layer}"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  <path id="model-layer.runtime.production.module.classpath">
+    <pathelement location="${model-layer.output.dir}"/>
+    <path refid="library.maven:_org.mockito:mockito-core:2.7.14.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.6.9.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-agent:1.6.9.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:2.5.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-android:1.6.5.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:dalvik-dx:1.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:libcore-dex:2.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  <path id="model-layer.module.classpath">
+    <path refid="${module.jdk.classpath.model-layer}"/>
+    <pathelement location="${model-layer.output.dir}"/>
+    <path refid="library.maven:_org.testng:testng:6.9.13.6.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.48.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant:1.9.7.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant-launcher:1.9.7.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_org.mockito:mockito-core:2.7.14.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.6.9.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-agent:1.6.9.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:2.5.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-android:1.6.5.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:dalvik-dx:1.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:libcore-dex:2.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  <path id="model-layer.runtime.module.classpath">
+    <pathelement location="${model-layer.testoutput.dir}"/>
+    <pathelement location="${model-layer.output.dir}"/>
+    <path refid="library.maven:_org.testng:testng:6.9.13.6.classpath"/>
+    <path refid="library.maven:_com.beust:jcommander:1.48.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant:1.9.7.classpath"/>
+    <path refid="library.maven:_org.apache.ant:ant-launcher:1.9.7.classpath"/>
+    <path refid="library.maven:_org.beanshell:bsh:2.0b4.classpath"/>
+    <path refid="library.maven:_org.mockito:mockito-core:2.7.14.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy:1.6.9.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-agent:1.6.9.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:2.5.classpath"/>
+    <path refid="library.maven:_net.bytebuddy:byte-buddy-android:1.6.5.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:dalvik-dx:1.classpath"/>
+    <path refid="library.maven:_com.jakewharton.android.repackaged:libcore-dex:2.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.model-layer">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.model-layer">
+    <patternset refid="excluded.from.module.model-layer"/>
+  </patternset>
+  
+  <path id="model-layer.module.sourcepath">
+    <dirset dir="${module.model-layer.basedir}">
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.model-layer" depends="compile.module.model-layer.production,compile.module.model-layer.tests" description="Compile module model-layer"/>
+  
+  <target name="compile.module.model-layer.production" depends="register.custom.compilers" description="Compile module model-layer; production classes">
+    <mkdir dir="${model-layer.output.dir}"/>
+    <javac2 destdir="${model-layer.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.model-layer}/javac">
+      <compilerarg line="${compiler.args.model-layer}"/>
+      <bootclasspath refid="model-layer.module.bootclasspath"/>
+      <classpath refid="model-layer.module.production.classpath"/>
+      <src refid="model-layer.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.model-layer"/>
+    </javac2>
+    
+    <copy todir="${model-layer.output.dir}">
+      <fileset dir="${module.model-layer.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.model-layer.tests" depends="register.custom.compilers,compile.module.model-layer.production" description="compile module model-layer; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.model-layer" description="cleanup module">
+    <delete dir="${model-layer.output.dir}"/>
+    <delete dir="${model-layer.testoutput.dir}"/>
+  </target>
+</project>

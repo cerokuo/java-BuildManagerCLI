@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/control-layer/control-layer.iml" filepath="$PROJECT_DIR$/control-layer/control-layer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/knowRoaming.iml" filepath="$PROJECT_DIR$/knowRoaming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model-layer/model-layer.iml" filepath="$PROJECT_DIR$/model-layer/model-layer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-layer/service-layer.iml" filepath="$PROJECT_DIR$/service-layer/service-layer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-layer/store-layer.iml" filepath="$PROJECT_DIR$/store-layer/store-layer.iml" />
+    </modules>
+  </component>
+</project>
